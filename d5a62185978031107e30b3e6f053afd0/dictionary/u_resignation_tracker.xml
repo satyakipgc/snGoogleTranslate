@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d9f72d89978031107e30b3e6f053af2d" label="Resignation Tracker" max_length="40" name="u_resignation_tracker" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="current designation" max_length="40" name="u_current_designation" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Employee number" max_length="40" name="u_employee_number" type="string"/>
+        <element attributes="encode_utf8=false" label="Employee to Resign" max_length="32" name="u_employee_to_resign" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Last working day" max_length="40" name="u_last_working_day" type="glide_date_time"/>
+        <element attributes="encode_utf8=false" label="Manager" max_length="32" name="u_manager" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="u_number" type="string"/>
+        <index name="index">
+            <element name="u_employee_to_resign"/>
+        </index>
+        <index name="index2">
+            <element name="u_manager"/>
+        </index>
+    </element>
+</database>
